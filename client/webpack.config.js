@@ -24,6 +24,10 @@ module.exports = () => {
         title: "JATE",
       }),
       new WorkboxPlugin.GenerateSW(),
+      new InjectManifest({
+        swSrc: "./src-sw.js",
+        swDest: "src-sw.js",
+      }),
       new WebpackPwaManifest({
         name: "Just Another Text Editor",
         short_name: "JATE",

@@ -13,30 +13,27 @@ const initdb = async () =>
   });
 
 // TODO: Add logic to a method that accepts some content and adds it to the database
-export const putDb = async (content) => {
-  const db = await openDB("jate", 1);
-  const transaction = db.transaction("jate", "readwrite");
-  const obStore = transaction.objectStore("jate");
 
-  const count = (await obStore.get("counter")) || 0;
-  count++;
-  const result = await obStore.put({ id: count, value: content });
-
-  await transaction.done;
-
-  return result;
+// GET function
+export const getDb = async (value) => {
+  // console.log("Getting data from the jateDB");
+  const jateDb = await openDB("jate", 1);
+  const tx = jateDb.transaction("jate", "readwrite");
+  const objStore = tx.objectStore("jate");
+  const req = objStore.getAll();
+  const res = await req;
+  console.log("data saved to the database", res);
 };
 
-// TODO: Add logic for a method that gets all the content from the database
-export const getDb = async () => {
-  const db = await openDB("jate", 1);
-  const transaction = db.transaction("jate", "readwrite");
-  const obStore = transaction.objectStore("jate");
-
-  const result = await obStore.getAll();
-
-  await transaction.done;
-  return result;
+// PUT function
+export const putDb = async (id, value) => {
+  // console.log("PUT request to update the jateDB");
+  const jateDb = await openDB("jate", 1);
+  const tx = jateDb.transaction("jate", "readwrite");
+  const objStore = tx.objectStore("jate");
+  const req = objStore.put({ id: id, value: value });
+  const res = await req;
+  console.log("data saved to the database", res);
 };
 
 initdb();
