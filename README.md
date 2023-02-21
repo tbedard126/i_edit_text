@@ -18,6 +18,9 @@ This is a PWA application made for editing text ofd your choice! This applicatio
 
 Here is the [Link](https://afternoon-oasis-12346.herokuapp.com/) to the deployed application!
 
+[](images/jate_website.png)
+[](images/jate_local.png)
+
 ## Installation:
 
 To install this application, clone the repository onto your local machine. After that open up a terminal inside of the project and run npm i. After that you can type npm start and that will build the application and and deploy the server. Then travel to localhost:3000 in your browser and it should be running. Alternativley you can visit https://afternoon-oasis-12346.herokuapp.com/ and click the install button and this program will be loaded onto your machine for offline usage!

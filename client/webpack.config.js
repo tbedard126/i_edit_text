@@ -18,11 +18,13 @@ module.exports = () => {
       filename: "[name].bundle.js",
       path: path.resolve(__dirname, "dist"),
     },
+    // HTML loader
     plugins: [
       new HtmlWebpackPlugin({
         template: "./index.html",
         title: "JATE",
       }),
+      // creating service worker/manifest for PWA
       new WorkboxPlugin.GenerateSW(),
       new InjectManifest({
         swSrc: "./src-sw.js",
@@ -45,7 +47,7 @@ module.exports = () => {
         ],
       }),
     ],
-
+    //css loader and babel
     module: {
       rules: [
         {
