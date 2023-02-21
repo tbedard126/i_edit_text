@@ -18,8 +18,9 @@ This is a PWA application made for editing text ofd your choice! This applicatio
 
 Here is the [Link](https://afternoon-oasis-12346.herokuapp.com/) to the deployed application!
 
-[](images/jate_website.png)
-[](images/jate_local.png)
+[](/images/jate_local.png)
+[](/images/jate_local_app.png)
+[](/images/jate_website.png)
 
 ## Installation:
 
